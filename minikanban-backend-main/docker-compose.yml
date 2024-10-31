@@ -1,0 +1,70 @@
+version: "3.7"
+
+services:
+  backend:
+    image: gluck0101/mini-kanban-backend:latest
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend:/app/backend
+    env_file:
+      - .env
+    environment:
+      - SUPABASE_URL=${SUPABASE_URL}
+      - SUPABASE_KEY=${SUPABASE_KEY}
+
+
+
+
+
+
+
+
+
+
+
+
+# version: "3.7"
+
+# services:
+#   # frontend:
+#   #   image: gluck0101/mini-kanban-frontend:latest
+#   #   build:
+#   #     context: ./frontend
+#   #     dockerfile: Dockerfile
+#   #   ports:
+#   #     - "3000:3000"
+#   #   volumes:
+#   #     - ./frontend:/app/frontend
+#   #   environment:
+#   #     - REACT_APP_GRAPHQL_API_URL=http://backend:5000/graphql
+#   #   depends_on:
+#   #     - backend
+
+#   backend:
+#     image: gluck0101/mini-kanban-backend:latest
+#     build:
+#       context: ./backend
+#       dockerfile: Dockerfile
+#     ports:
+#       - "5000:5000"
+#     volumes:
+#       - ./backend:/app/backend
+#     environment:
+#       - DYNAMODB_ENDPOINT=http://db:8000
+#     depends_on:
+#       - db
+
+#   db:
+#     image: amazon/dynamodb-local
+#     ports:
+#       - "8000:8000"
+#     volumes:
+#       - dynamodb_data:/home/dynamodblocal
+#     command: ["-jar", "DynamoDBLocal.jar", "-sharedDb"]
+
+# volumes:
+#   dynamodb_data:

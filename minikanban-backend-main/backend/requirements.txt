@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+graphene
+starlette-graphene3
+boto3
+supabase
+sqlalchemy
+postgrest
+psycopg2-binary
