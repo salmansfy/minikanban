@@ -46,12 +46,9 @@ htmlcov/
 *.pyc
 
 # Environment / virtualenvs
-.env/
 .venv/
 venv/
-ENV/
-env/
-env
+.env
 
 # Jupyter Notebook
 .ipynb_checkpoints
